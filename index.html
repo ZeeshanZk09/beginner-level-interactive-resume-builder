@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Resume Builder</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="resume-container">
+      <h1>Resume Builder</h1>
+
+      <!-- Form to input details -->
+      <section id="form-section">
+        <h2>Fill in Your Details</h2>
+        <form id="resumeForm">
+          <!-- Profile Picture Upload -->
+          <div class="form-group">
+            <label for="profilePic">Profile Picture</label>
+            <input
+              type="file"
+              id="profilePic"
+              class="file-input"
+              accept="image/*"
+              required
+            />
+            <label for="profilePic" class="custom-file-upload"
+              >Choose File</label
+            >
+          </div>
+
+          <!-- Personal Info -->
+          <div class="form-group full-form-group">
+            <label for="fullName">Full Name</label>
+            <input
+              type="text"
+              id="fullName"
+              placeholder="Enter your full name"
+              required
+            />
+          </div>
+
+          <!-- Dynamic Contacts -->
+          <div class="form-group" id="contactsContainer">
+            <label for="contact">Contact Info</label>
+            <div>
+                <div class="form-contact">
+                    <h4>Whatsapp No :</h4>
+                    <input
+                    type="tel"
+                    name="contact[]"
+                    placeholder="+92__________"
+                    class="contact-input"
+                    required
+                    />
+                </div>
+                <div class="form-contact">
+                    <h4>Phone No :</h4>
+                    <input
+                    type="tel"
+                    name="contact[]"
+                    placeholder="+92__________"
+                    class="contact-input"
+                    required
+                    />
+                </div>
+                <div class="form-contact">
+                    <h4>Email :</h4>
+                    <input
+                    type="email"
+                    name="contact[]"
+                    placeholder="example@gmail.com"
+                    class="contact-input"
+                    required
+                    />
+                </div>
+                <div class="form-contact">
+                    <h4>LinkedIn Profile URL :</h4>
+                    <input
+                    type="url"
+                    name="contact[]"
+                    placeholder="Put your LinkedIn Profile URL"
+                    class="contact-input"
+                    required
+                    />
+                </div>
+                <div class="form-contact">
+                    <h4>Github Profile URL :</h4>
+                    <input
+                    type="url"
+                    name="contact[]"
+                    placeholder="Put your Github Profile URL"
+                    class="contact-input"
+                    required
+                    />
+                </div>
+            </div>
+          </div>
+          <button type="button" id="addContactBtn">+ Add More Contact</button>
+
+          <!-- Education -->
+          <div class="form-group">
+            <label for="education">Education</label>
+            <textarea
+              id="education"
+              placeholder="e.g., B.Sc. Computer Science, XYZ University"
+            ></textarea>
+          </div>
+
+          <!-- Skills -->
+          <div class="form-group">
+            <label for="skills">Skills</label>
+            <textarea
+              id="skills"
+              placeholder="e.g., JavaScript, TypeScript"
+            ></textarea>
+          </div>
+
+          <!-- Work Experience -->
+          <div class="form-group">
+            <label for="experience">Work Experience</label>
+            <textarea
+              id="experience"
+              placeholder="e.g., Web Developer at ABC Company"
+            ></textarea>
+          </div>
+
+          <button type="submit">Generate Resume</button>
+        </form>
+      </section>
+
+      <!-- Resume Preview -->
+      <section id="resume-preview">
+        <h2>Preview Your Resume</h2>
+        <div id="output">
+          <div id="imagePreview"></div>
+          <p><strong>Name:</strong> <span id="outputName"></span></p>
+          <p><strong>Contacts:</strong> <ul id="outputContacts"></ul></p>
+          <p><strong>Education:</strong> <span id="outputEducation"></span></p>
+          <p><strong>Skills:</strong> <span id="outputSkills"></span></p>
+          <p><strong>Experience:</strong> <span id="outputExperience"></span></p>
+        </div>
+
+        <!-- Toggle Skills Button -->
+        <button id="toggleSkills">Toggle Skills</button>
+
+        <!-- Print Button -->
+        <button id="printResume">Print Resume</button>
+      </section>
+    </div>
+
+    <script src="scripts/app.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  </body>
+</html>

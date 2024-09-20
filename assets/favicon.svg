@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Hexagon Shape -->
+  <polygon fill="#00adb5" stroke="#eeeeee" stroke-width="5"
+    points="50,5 90,25 90,75 50,95 10,75 10,25" />
+  <!-- Inner Initial or Symbol -->
+  <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-family="Poppins, sans-serif" font-size="40" fill="#ffffff">R</text>
+</svg>
